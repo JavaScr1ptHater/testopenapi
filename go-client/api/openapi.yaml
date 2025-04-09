@@ -1,0 +1,27 @@
+openapi: 3.0.0
+info:
+  title: HelloWorld API
+  version: 1.0.0
+servers:
+- url: /
+paths:
+  /hello:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_hello_get_200_response'
+          description: Successo
+      summary: Restituisce un messaggio di benvenuto
+components:
+  schemas:
+    _hello_get_200_response:
+      example:
+        message: Hello World
+      properties:
+        message:
+          example: Hello World
+          type: string
+      type: object
