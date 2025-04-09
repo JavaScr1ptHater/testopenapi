@@ -3,7 +3,7 @@ package main
 import (
     "context"
     "fmt"
-    openapi "github.com/JavaScr1ptHater/testopenapi.git"
+    openapi "github.com/JavaScr1ptHater/testopenapi"
 )
 
 func main() {
