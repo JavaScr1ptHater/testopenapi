@@ -1,0 +1,37 @@
+openapi: 3.0.0
+info:
+  title: File Processor API
+  version: 1.0.0
+servers:
+- url: /
+paths:
+  /process-file:
+    post:
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/_process_file_post_request'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_process_file_post_200_response'
+          description: File elaborato con successo
+      summary: "Riceve un file, lo elabora e restituisce il risultato"
+components:
+  schemas:
+    _process_file_post_request:
+      properties:
+        file:
+          format: binary
+          type: string
+      type: object
+    _process_file_post_200_response:
+      example:
+        result: result
+      properties:
+        result:
+          type: string
+      type: object
